@@ -353,6 +353,7 @@ namespace AutoService
             this.pnlKurumsal.Name = "pnlKurumsal";
             this.pnlKurumsal.Size = new System.Drawing.Size(227, 196);
             this.pnlKurumsal.TabIndex = 38;
+            this.pnlKurumsal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlKurumsal_Paint);
             // 
             // lblVergiDairesi
             // 

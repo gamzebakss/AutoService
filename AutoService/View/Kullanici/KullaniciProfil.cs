@@ -148,10 +148,22 @@ namespace AutoService
         private void lblAd_Click(object sender, EventArgs e)
         {
 
+
+
         }
 
         private void btnAracDuzenle_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pnlKurumsal_Paint(object sender, PaintEventArgs e)
+        {
+
+
+
+
+
 
         }
     }
