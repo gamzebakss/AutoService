@@ -69,17 +69,30 @@
     <Compile Include="Controllers\AracControllers.cs" />
     <Compile Include="Controllers\AracModelControllers.cs" />
     <Compile Include="Controllers\db.cs" />
+    <Compile Include="Controllers\DosyaControllers.cs" />
+    <Compile Include="Controllers\DosyaKategoriContollers.cs" />
     <Compile Include="Controllers\Email.cs" />
+    <Compile Include="Controllers\FotoControllers.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\Tools.cs" />
     <Compile Include="Model\Arac.cs" />
     <Compile Include="Model\AracModel.cs" />
+    <Compile Include="Model\Dosya.cs" />
+    <Compile Include="Model\DosyaKategori.cs" />
     <Compile Include="Model\Enumlar.cs" />
+    <Compile Include="Model\Fotograf.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="View\Arac\AracEkle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Arac\AracEkle.Designer.cs">
       <DependentUpon>AracEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Arac\AracProfilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Arac\AracProfilForm.Designer.cs">
+      <DependentUpon>AracProfilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Kullanici\KullaniciKayitForm.cs">
       <SubType>Form</SubType>
@@ -138,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="View\Arac\AracEkle.resx">
       <DependentUpon>AracEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Arac\AracProfilForm.resx">
+      <DependentUpon>AracProfilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Kullanici\KullaniciKayitForm.resx">
       <DependentUpon>KullaniciKayitForm.cs</DependentUpon>
@@ -324,6 +340,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kullaniciprofil1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arkaplan23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngegg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

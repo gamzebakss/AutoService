@@ -167,7 +167,7 @@ namespace AutoService
             {
 
                 SqlConnection conn = db.conn();
-                SqlCommand cmd = new SqlCommand("Update Kullanicilar set ProfilFoto=@profilfoto where id=@id ", conn);
+                SqlCommand cmd = new SqlCommand("Update Kullanicilar Set ProfilFoto=@profilfoto where id=@id", conn);
                 cmd.Parameters.AddWithValue("@profilfoto", dosyaAdi);
                 cmd.Parameters.AddWithValue("@id", kullaniciID);
 

@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace AutoService
 {
-   public class AracModel
+   public class Fotograf
     {
-        public int id { get; set;}
+        public int id { get; set; }
         public string Ad { get; set; }
+        public string Path { get; set; }//Dosya yolu
+        public int AracID { get; set; }
+
     }
 }

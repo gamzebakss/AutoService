@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace AutoService
 {
-   public class AracModel
+   public class Dosya
     {
-        public int id { get; set;}
+        public int id { get; set; }
         public string Ad { get; set; }
+        public string Path { get; set; }
+        public int KategoriID { get; set; }
+        public int AracID { get; set; }
+
+
     }
 }

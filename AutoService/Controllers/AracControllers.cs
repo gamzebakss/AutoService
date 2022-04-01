@@ -55,5 +55,29 @@ namespace AutoService
             return list;
 
         }
+        public static Arac  Getir(int aracID)//Burdan AracModelController yazdığımız GetirByAracID yaptığımız kodları çağırıyoruz... 
+        {
+            Arac arac = new Arac();
+            SqlConnection conn = db.conn();
+            SqlCommand cmd = new SqlCommand("Select [id],[Plaka],[ModelID],[SasiNo],[Yil],[Renk],[KullaniciID] From Araclar where id=@id", conn);
+            cmd.Parameters.AddWithValue("@id", aracID);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            arac.Renk = dr["Renk"].ToString();
+            arac.KullaniciID = (int)dr["KullaniciID"];
+            arac.Plaka = dr["Plaka"].ToString();
+            arac.ModelID = (int)dr["ModelID"];
+            arac.SasiNo = dr["SasiNo"].ToString();
+            arac.Yil = (int)dr["Yil"];
+            arac.Dosyalar = DosyaControllers.ListeGetir(aracID);
+            arac.Model =AracModelControllers.GetirByAracID(aracID);
+            arac.Fotolar =FotoControllers.Getir(aracID);
+            conn.Close();
+
+
+            return arac;
+        
+        }
     }
 }

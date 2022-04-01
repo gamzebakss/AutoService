@@ -45,14 +45,11 @@ namespace AutoService
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.markalarTableAdapter = new AutoService.AutoServiceDataSet2TableAdapters.MarkalarTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btniptal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.markalarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,28 +205,6 @@ namespace AutoService
             this.label7.Text = "Plaka :";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(-1, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 24);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Araç Ekle";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AutoService.Properties.Resources.baslık;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(548, 27);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // markalarTableAdapter
             // 
             this.markalarTableAdapter.ClearBeforeFill = true;
@@ -278,8 +253,6 @@ namespace AutoService
             this.ClientSize = new System.Drawing.Size(547, 515);
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAracEkle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AracEkle";
@@ -288,11 +261,9 @@ namespace AutoService
             this.Load += new System.EventHandler(this.AracEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.markalarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -311,8 +282,6 @@ namespace AutoService
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private AutoServiceDataSet2 autoServiceDataSet2;
         private System.Windows.Forms.BindingSource markalarBindingSource;
         private AutoServiceDataSet2TableAdapters.MarkalarTableAdapter markalarTableAdapter;
