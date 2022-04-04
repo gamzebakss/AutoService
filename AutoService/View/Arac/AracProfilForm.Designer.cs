@@ -30,10 +30,8 @@ namespace AutoService
         private void InitializeComponent()
         {
             this.grpFofograf = new System.Windows.Forms.GroupBox();
-            this.pctbresm2 = new System.Windows.Forms.PictureBox();
-            this.pctbresm4 = new System.Windows.Forms.PictureBox();
-            this.pctbresm3 = new System.Windows.Forms.PictureBox();
-            this.pctbresm1 = new System.Windows.Forms.PictureBox();
+            this.resim1 = new System.Windows.Forms.PictureBox();
+            this.pnlFotolar = new System.Windows.Forms.FlowLayoutPanel();
             this.grpTemelBilgiler = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,21 +52,14 @@ namespace AutoService
             this.picDosya = new System.Windows.Forms.PictureBox();
             this.ddlKlasorler = new System.Windows.Forms.ComboBox();
             this.lstbDosyalar = new System.Windows.Forms.ListBox();
-            this.btnResimEkle = new System.Windows.Forms.Button();
-            this.btnResimSil = new System.Windows.Forms.Button();
-            this.btnDosyaSil = new System.Windows.Forms.Button();
-            this.btnDosyaEkle = new System.Windows.Forms.Button();
             this.grpYukle = new System.Windows.Forms.GroupBox();
             this.btnYukle = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Dosyayolu = new System.Windows.Forms.TextBox();
             this.btnGozat = new System.Windows.Forms.Button();
             this.autoServiceDataSet1 = new AutoService.AutoServiceDataSet();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.grpFofograf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resim1)).BeginInit();
             this.grpTemelBilgiler.SuspendLayout();
             this.grpDosyalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDosya)).BeginInit();
@@ -79,50 +70,35 @@ namespace AutoService
             // grpFofograf
             // 
             this.grpFofograf.BackColor = System.Drawing.Color.Transparent;
-            this.grpFofograf.Controls.Add(this.pctbresm2);
-            this.grpFofograf.Controls.Add(this.pctbresm4);
-            this.grpFofograf.Controls.Add(this.pctbresm3);
-            this.grpFofograf.Controls.Add(this.pctbresm1);
+            this.grpFofograf.Controls.Add(this.resim1);
+            this.grpFofograf.Controls.Add(this.pnlFotolar);
             this.grpFofograf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpFofograf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.grpFofograf.Location = new System.Drawing.Point(618, 6);
             this.grpFofograf.Name = "grpFofograf";
-            this.grpFofograf.Size = new System.Drawing.Size(196, 544);
+            this.grpFofograf.Size = new System.Drawing.Size(196, 662);
             this.grpFofograf.TabIndex = 0;
             this.grpFofograf.TabStop = false;
             this.grpFofograf.Text = "Fotoğraflar";
             // 
-            // pctbresm2
+            // resim1
             // 
-            this.pctbresm2.Location = new System.Drawing.Point(23, 157);
-            this.pctbresm2.Name = "pctbresm2";
-            this.pctbresm2.Size = new System.Drawing.Size(155, 97);
-            this.pctbresm2.TabIndex = 3;
-            this.pctbresm2.TabStop = false;
+            this.resim1.BackgroundImage = global::AutoService.Properties.Resources.pngegg__1_;
+            this.resim1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resim1.Location = new System.Drawing.Point(68, 21);
+            this.resim1.Name = "resim1";
+            this.resim1.Size = new System.Drawing.Size(53, 45);
+            this.resim1.TabIndex = 0;
+            this.resim1.TabStop = false;
+            this.resim1.Click += new System.EventHandler(this.resim1_Click);
             // 
-            // pctbresm4
+            // pnlFotolar
             // 
-            this.pctbresm4.Location = new System.Drawing.Point(23, 417);
-            this.pctbresm4.Name = "pctbresm4";
-            this.pctbresm4.Size = new System.Drawing.Size(155, 97);
-            this.pctbresm4.TabIndex = 2;
-            this.pctbresm4.TabStop = false;
-            // 
-            // pctbresm3
-            // 
-            this.pctbresm3.Location = new System.Drawing.Point(23, 285);
-            this.pctbresm3.Name = "pctbresm3";
-            this.pctbresm3.Size = new System.Drawing.Size(155, 97);
-            this.pctbresm3.TabIndex = 1;
-            this.pctbresm3.TabStop = false;
-            // 
-            // pctbresm1
-            // 
-            this.pctbresm1.Location = new System.Drawing.Point(23, 31);
-            this.pctbresm1.Name = "pctbresm1";
-            this.pctbresm1.Size = new System.Drawing.Size(155, 97);
-            this.pctbresm1.TabIndex = 0;
-            this.pctbresm1.TabStop = false;
+            this.pnlFotolar.AutoScroll = true;
+            this.pnlFotolar.Location = new System.Drawing.Point(16, 72);
+            this.pnlFotolar.Name = "pnlFotolar";
+            this.pnlFotolar.Size = new System.Drawing.Size(165, 584);
+            this.pnlFotolar.TabIndex = 0;
             // 
             // grpTemelBilgiler
             // 
@@ -353,54 +329,13 @@ namespace AutoService
             this.lstbDosyalar.Name = "lstbDosyalar";
             this.lstbDosyalar.Size = new System.Drawing.Size(226, 164);
             this.lstbDosyalar.TabIndex = 0;
-            // 
-            // btnResimEkle
-            // 
-            this.btnResimEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnResimEkle.Location = new System.Drawing.Point(618, 556);
-            this.btnResimEkle.Name = "btnResimEkle";
-            this.btnResimEkle.Size = new System.Drawing.Size(98, 23);
-            this.btnResimEkle.TabIndex = 3;
-            this.btnResimEkle.Text = "Ekle";
-            this.btnResimEkle.UseVisualStyleBackColor = true;
-            this.btnResimEkle.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnResimSil
-            // 
-            this.btnResimSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnResimSil.Location = new System.Drawing.Point(716, 556);
-            this.btnResimSil.Name = "btnResimSil";
-            this.btnResimSil.Size = new System.Drawing.Size(98, 23);
-            this.btnResimSil.TabIndex = 4;
-            this.btnResimSil.Text = "Sil";
-            this.btnResimSil.UseVisualStyleBackColor = true;
-            // 
-            // btnDosyaSil
-            // 
-            this.btnDosyaSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDosyaSil.Location = new System.Drawing.Point(12, 645);
-            this.btnDosyaSil.Name = "btnDosyaSil";
-            this.btnDosyaSil.Size = new System.Drawing.Size(98, 23);
-            this.btnDosyaSil.TabIndex = 6;
-            this.btnDosyaSil.Text = "Sil";
-            this.btnDosyaSil.UseVisualStyleBackColor = true;
-            // 
-            // btnDosyaEkle
-            // 
-            this.btnDosyaEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDosyaEkle.Location = new System.Drawing.Point(128, 645);
-            this.btnDosyaEkle.Name = "btnDosyaEkle";
-            this.btnDosyaEkle.Size = new System.Drawing.Size(98, 23);
-            this.btnDosyaEkle.TabIndex = 5;
-            this.btnDosyaEkle.Text = "Ekle";
-            this.btnDosyaEkle.UseVisualStyleBackColor = true;
-            this.btnDosyaEkle.Click += new System.EventHandler(this.button2_Click);
+            this.lstbDosyalar.DoubleClick += new System.EventHandler(this.lstbDosyalar_DoubleClick);
             // 
             // grpYukle
             // 
             this.grpYukle.BackColor = System.Drawing.Color.Transparent;
             this.grpYukle.Controls.Add(this.btnYukle);
-            this.grpYukle.Controls.Add(this.textBox1);
+            this.grpYukle.Controls.Add(this.Dosyayolu);
             this.grpYukle.Controls.Add(this.btnGozat);
             this.grpYukle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpYukle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -425,12 +360,12 @@ namespace AutoService
             this.btnYukle.UseVisualStyleBackColor = true;
             this.btnYukle.Click += new System.EventHandler(this.btnYukle_Click);
             // 
-            // textBox1
+            // Dosyayolu
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 22);
-            this.textBox1.TabIndex = 1;
+            this.Dosyayolu.Location = new System.Drawing.Point(85, 44);
+            this.Dosyayolu.Name = "Dosyayolu";
+            this.Dosyayolu.Size = new System.Drawing.Size(105, 22);
+            this.Dosyayolu.TabIndex = 1;
             // 
             // btnGozat
             // 
@@ -462,10 +397,6 @@ namespace AutoService
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(826, 680);
             this.Controls.Add(this.grpYukle);
-            this.Controls.Add(this.btnDosyaSil);
-            this.Controls.Add(this.btnDosyaEkle);
-            this.Controls.Add(this.btnResimSil);
-            this.Controls.Add(this.btnResimEkle);
             this.Controls.Add(this.grpDosyalar);
             this.Controls.Add(this.grpTemelBilgiler);
             this.Controls.Add(this.grpFofograf);
@@ -475,10 +406,7 @@ namespace AutoService
             this.Text = "AracProfilForm";
             this.Load += new System.EventHandler(this.AracProfilForm_Load);
             this.grpFofograf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbresm1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resim1)).EndInit();
             this.grpTemelBilgiler.ResumeLayout(false);
             this.grpTemelBilgiler.PerformLayout();
             this.grpDosyalar.ResumeLayout(false);
@@ -493,16 +421,8 @@ namespace AutoService
         #endregion
 
         private System.Windows.Forms.GroupBox grpFofograf;
-        private System.Windows.Forms.PictureBox pctbresm2;
-        private System.Windows.Forms.PictureBox pctbresm4;
-        private System.Windows.Forms.PictureBox pctbresm3;
-        private System.Windows.Forms.PictureBox pctbresm1;
         private System.Windows.Forms.GroupBox grpTemelBilgiler;
         private System.Windows.Forms.GroupBox grpDosyalar;
-        private System.Windows.Forms.Button btnResimEkle;
-        private System.Windows.Forms.Button btnResimSil;
-        private System.Windows.Forms.Button btnDosyaSil;
-        private System.Windows.Forms.Button btnDosyaEkle;
         private System.Windows.Forms.GroupBox grpYukle;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -526,6 +446,8 @@ namespace AutoService
         private System.Windows.Forms.Button btnGozat;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnYukle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Dosyayolu;
+        private System.Windows.Forms.FlowLayoutPanel pnlFotolar;
+        private System.Windows.Forms.PictureBox resim1;
     }
 }

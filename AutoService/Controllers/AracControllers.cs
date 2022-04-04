@@ -70,9 +70,11 @@ namespace AutoService
             arac.ModelID = (int)dr["ModelID"];
             arac.SasiNo = dr["SasiNo"].ToString();
             arac.Yil = (int)dr["Yil"];
+            arac.id = (int)dr["id"];
             arac.Dosyalar = DosyaControllers.ListeGetir(aracID);
             arac.Model =AracModelControllers.GetirByAracID(aracID);
             arac.Fotolar =FotoControllers.Getir(aracID);
+           
             conn.Close();
 
 

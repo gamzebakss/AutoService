@@ -13,6 +13,8 @@ namespace AutoService
         public string Path { get; set; }
         public int KategoriID { get; set; }
         public int AracID { get; set; }
+         
+        public string KategoriAdi { get; set; }
 
 
     }

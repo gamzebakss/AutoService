@@ -14,7 +14,7 @@ namespace AutoService
         {
             List<Dosya> liste = new List<Dosya>();
             SqlConnection conn = db.conn();
-            SqlCommand cmd = new SqlCommand("Select id,Ad,Path,KategoriID,AracID From Dosyalar where AracID=@aracid", conn);
+            SqlCommand cmd = new SqlCommand("Select id,Ad,Path,KategoriID,AracID,(Select Ad from DosyalarKategoriler where id=KategoriID) as KategoriAdi from Dosyalar where AracID=@aracid", conn);
             cmd.Parameters.AddWithValue("@aracid", aracID);
             conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
@@ -43,6 +43,30 @@ namespace AutoService
 
             conn.Close();
             return liste;
+        }
+        public static bool DosyaKaydet(Dosya dosya)
+        {
+            try
+            {
+                SqlConnection conn = db.conn();
+                SqlCommand cmd = new SqlCommand("Insert into Dosyalar(Ad,Path,KategoriID,AracID)values(@ad,@path,@kategoriid,@aracid)", conn);
+                cmd.Parameters.AddWithValue("@ad", dosya.Ad);
+                cmd.Parameters.AddWithValue("@path", dosya.Path);
+                cmd.Parameters.AddWithValue("@kategoriid", dosya.KategoriID);
+                cmd.Parameters.AddWithValue("@aracid", dosya.AracID);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                cmd.Dispose();
+                return true;
+
+            }
+            catch 
+            {
+
+                return false;
+            }
+            
         }
     }
 }
