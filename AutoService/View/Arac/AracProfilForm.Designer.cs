@@ -87,7 +87,7 @@ namespace AutoService
             this.resim1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.resim1.Location = new System.Drawing.Point(68, 21);
             this.resim1.Name = "resim1";
-            this.resim1.Size = new System.Drawing.Size(53, 45);
+            this.resim1.Size = new System.Drawing.Size(45, 45);
             this.resim1.TabIndex = 0;
             this.resim1.TabStop = false;
             this.resim1.Click += new System.EventHandler(this.resim1_Click);
@@ -99,6 +99,7 @@ namespace AutoService
             this.pnlFotolar.Name = "pnlFotolar";
             this.pnlFotolar.Size = new System.Drawing.Size(165, 584);
             this.pnlFotolar.TabIndex = 0;
+            this.pnlFotolar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFotolar_Paint);
             // 
             // grpTemelBilgiler
             // 

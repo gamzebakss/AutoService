@@ -64,10 +64,18 @@ namespace AutoService
                 pic.Name = "pictureBoxs-" + f.id;
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
                 pnlFotolar.Controls.Add(pic);
+                pic.DoubleClick += picFoto_DoubleClick;
 
             }
 
         }
+
+        private void picFoto_DoubleClick(object sender,EventArgs e)
+        {
+            //FotoGosterFrom frm = new FotoGosterFrom();
+            //frm
+        }
+
 
         private void grpTemelBilgiler_Enter(object sender, EventArgs e)
         {
@@ -189,6 +197,11 @@ namespace AutoService
         }
 
         private void resim1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlFotolar_Paint(object sender, PaintEventArgs e)
         {
 
         }
