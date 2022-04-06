@@ -291,6 +291,11 @@ namespace AutoService
         {
 
         }
+
+        private void btnresimSil_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

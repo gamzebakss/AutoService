@@ -116,5 +116,33 @@ namespace AutoService
             return arac;
 
         }
+        public static List<Arac> TumunuGetir()
+        {
+            Arac arac = new Arac();
+            List<Arac> Liste = new List<Arac>();
+            SqlConnection conn = db.conn();
+            SqlCommand cmd = new SqlCommand("Select [id],[Plaka],[ModelID],[SasiNo],[Yil],[Renk],[KullaniciID] from Araclar", conn);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            while(dr.Read())
+            {
+                arac.Renk = dr["Renk"].ToString();
+                arac.KullaniciID = (int)dr["KullaniciID"];
+                arac.Plaka = dr["Plaka"].ToString();
+                arac.ModelID = (int)dr["ModelID"];
+                arac.SasiNo = dr["SasiNo"].ToString();
+                arac.Yil = (int)dr["Yil"];
+                arac.id = (int)dr["id"];
+                arac.Dosyalar = DosyaControllers.ListeGetir((int)dr["id"]);
+                arac.Model = AracModelControllers.GetirByAracID((int)dr["id"]);
+                arac.Fotolar = FotoControllers.Getir((int)dr["id"]);
+                Liste.Add(arac);
+            }
+           
+            conn.Close();
+
+            return Liste;
+        }
     }
 }

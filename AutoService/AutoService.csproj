@@ -82,6 +82,7 @@
     <Compile Include="Model\DosyaKategori.cs" />
     <Compile Include="Model\Enumlar.cs" />
     <Compile Include="Model\Fotograf.cs" />
+    <Compile Include="Model\isEmri.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="View\Arac\AracEkle.cs">
       <SubType>Form</SubType>

@@ -434,6 +434,7 @@ namespace AutoService
             this.btnresimSil.TabIndex = 5;
             this.btnresimSil.Text = "Sil";
             this.btnresimSil.UseVisualStyleBackColor = true;
+            this.btnresimSil.Click += new System.EventHandler(this.btnresimSil_Click);
             // 
             // label11
             // 
