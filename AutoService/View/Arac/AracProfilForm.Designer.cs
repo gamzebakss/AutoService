@@ -30,7 +30,6 @@ namespace AutoService
         private void InitializeComponent()
         {
             this.grpFofograf = new System.Windows.Forms.GroupBox();
-            this.resim1 = new System.Windows.Forms.PictureBox();
             this.pnlFotolar = new System.Windows.Forms.FlowLayoutPanel();
             this.grpTemelBilgiler = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@ namespace AutoService
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grpDosyalar = new System.Windows.Forms.GroupBox();
+            this.btnDosyaSil = new System.Windows.Forms.Button();
             this.picDosya = new System.Windows.Forms.PictureBox();
             this.ddlKlasorler = new System.Windows.Forms.ComboBox();
             this.lstbDosyalar = new System.Windows.Forms.ListBox();
@@ -58,8 +58,12 @@ namespace AutoService
             this.btnGozat = new System.Windows.Forms.Button();
             this.autoServiceDataSet1 = new AutoService.AutoServiceDataSet();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnresimGozat = new System.Windows.Forms.Button();
+            this.btnresimYukle = new System.Windows.Forms.Button();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.btnresimSil = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.grpFofograf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resim1)).BeginInit();
             this.grpTemelBilgiler.SuspendLayout();
             this.grpDosyalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDosya)).BeginInit();
@@ -70,36 +74,23 @@ namespace AutoService
             // grpFofograf
             // 
             this.grpFofograf.BackColor = System.Drawing.Color.Transparent;
-            this.grpFofograf.Controls.Add(this.resim1);
             this.grpFofograf.Controls.Add(this.pnlFotolar);
             this.grpFofograf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpFofograf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.grpFofograf.Location = new System.Drawing.Point(618, 6);
+            this.grpFofograf.Location = new System.Drawing.Point(477, 43);
             this.grpFofograf.Name = "grpFofograf";
-            this.grpFofograf.Size = new System.Drawing.Size(196, 662);
+            this.grpFofograf.Size = new System.Drawing.Size(219, 602);
             this.grpFofograf.TabIndex = 0;
             this.grpFofograf.TabStop = false;
             this.grpFofograf.Text = "Fotoğraflar";
             // 
-            // resim1
-            // 
-            this.resim1.BackgroundImage = global::AutoService.Properties.Resources.pngegg__1_;
-            this.resim1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.resim1.Location = new System.Drawing.Point(68, 21);
-            this.resim1.Name = "resim1";
-            this.resim1.Size = new System.Drawing.Size(45, 45);
-            this.resim1.TabIndex = 0;
-            this.resim1.TabStop = false;
-            this.resim1.Click += new System.EventHandler(this.resim1_Click);
-            // 
             // pnlFotolar
             // 
             this.pnlFotolar.AutoScroll = true;
-            this.pnlFotolar.Location = new System.Drawing.Point(16, 72);
+            this.pnlFotolar.Location = new System.Drawing.Point(13, 21);
             this.pnlFotolar.Name = "pnlFotolar";
-            this.pnlFotolar.Size = new System.Drawing.Size(165, 584);
+            this.pnlFotolar.Size = new System.Drawing.Size(195, 575);
             this.pnlFotolar.TabIndex = 0;
-            this.pnlFotolar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFotolar_Paint);
             // 
             // grpTemelBilgiler
             // 
@@ -121,9 +112,9 @@ namespace AutoService
             this.grpTemelBilgiler.Controls.Add(this.label1);
             this.grpTemelBilgiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpTemelBilgiler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.grpTemelBilgiler.Location = new System.Drawing.Point(12, 8);
+            this.grpTemelBilgiler.Location = new System.Drawing.Point(47, 43);
             this.grpTemelBilgiler.Name = "grpTemelBilgiler";
-            this.grpTemelBilgiler.Size = new System.Drawing.Size(571, 213);
+            this.grpTemelBilgiler.Size = new System.Drawing.Size(348, 239);
             this.grpTemelBilgiler.TabIndex = 1;
             this.grpTemelBilgiler.TabStop = false;
             this.grpTemelBilgiler.Text = "Temel Bilgiler";
@@ -133,7 +124,7 @@ namespace AutoService
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(91, 108);
+            this.label10.Location = new System.Drawing.Point(95, 115);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(12, 16);
             this.label10.TabIndex = 15;
@@ -143,7 +134,7 @@ namespace AutoService
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(91, 140);
+            this.label9.Location = new System.Drawing.Point(95, 147);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(12, 16);
             this.label9.TabIndex = 14;
@@ -153,7 +144,7 @@ namespace AutoService
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(91, 174);
+            this.label8.Location = new System.Drawing.Point(95, 181);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(12, 16);
             this.label8.TabIndex = 13;
@@ -163,7 +154,7 @@ namespace AutoService
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(91, 48);
+            this.label7.Location = new System.Drawing.Point(95, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(12, 16);
             this.label7.TabIndex = 12;
@@ -173,7 +164,7 @@ namespace AutoService
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(91, 77);
+            this.label5.Location = new System.Drawing.Point(95, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(12, 16);
             this.label5.TabIndex = 11;
@@ -184,7 +175,7 @@ namespace AutoService
             this.lblPlaka.AutoSize = true;
             this.lblPlaka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblPlaka.ForeColor = System.Drawing.Color.Black;
-            this.lblPlaka.Location = new System.Drawing.Point(113, 48);
+            this.lblPlaka.Location = new System.Drawing.Point(117, 55);
             this.lblPlaka.Name = "lblPlaka";
             this.lblPlaka.Size = new System.Drawing.Size(46, 16);
             this.lblPlaka.TabIndex = 10;
@@ -195,7 +186,7 @@ namespace AutoService
             this.lblSasiNo.AutoSize = true;
             this.lblSasiNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSasiNo.ForeColor = System.Drawing.Color.Black;
-            this.lblSasiNo.Location = new System.Drawing.Point(113, 174);
+            this.lblSasiNo.Location = new System.Drawing.Point(117, 181);
             this.lblSasiNo.Name = "lblSasiNo";
             this.lblSasiNo.Size = new System.Drawing.Size(56, 16);
             this.lblSasiNo.TabIndex = 9;
@@ -206,7 +197,7 @@ namespace AutoService
             this.lblModel.AutoSize = true;
             this.lblModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblModel.ForeColor = System.Drawing.Color.Black;
-            this.lblModel.Location = new System.Drawing.Point(113, 77);
+            this.lblModel.Location = new System.Drawing.Point(117, 84);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(46, 16);
             this.lblModel.TabIndex = 8;
@@ -217,7 +208,7 @@ namespace AutoService
             this.lblYil.AutoSize = true;
             this.lblYil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblYil.ForeColor = System.Drawing.Color.Black;
-            this.lblYil.Location = new System.Drawing.Point(113, 108);
+            this.lblYil.Location = new System.Drawing.Point(117, 115);
             this.lblYil.Name = "lblYil";
             this.lblYil.Size = new System.Drawing.Size(23, 16);
             this.lblYil.TabIndex = 7;
@@ -228,7 +219,7 @@ namespace AutoService
             this.lblRenk.AutoSize = true;
             this.lblRenk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRenk.ForeColor = System.Drawing.Color.Black;
-            this.lblRenk.Location = new System.Drawing.Point(113, 140);
+            this.lblRenk.Location = new System.Drawing.Point(117, 147);
             this.lblRenk.Name = "lblRenk";
             this.lblRenk.Size = new System.Drawing.Size(40, 16);
             this.lblRenk.TabIndex = 6;
@@ -238,7 +229,7 @@ namespace AutoService
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(18, 174);
+            this.label6.Location = new System.Drawing.Point(22, 181);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 5;
@@ -248,7 +239,7 @@ namespace AutoService
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(18, 108);
+            this.label4.Location = new System.Drawing.Point(22, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 16);
             this.label4.TabIndex = 3;
@@ -258,7 +249,7 @@ namespace AutoService
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(18, 140);
+            this.label3.Location = new System.Drawing.Point(22, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 2;
@@ -268,7 +259,7 @@ namespace AutoService
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(18, 77);
+            this.label2.Location = new System.Drawing.Point(22, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 1;
@@ -278,7 +269,7 @@ namespace AutoService
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(18, 48);
+            this.label1.Location = new System.Drawing.Point(22, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 0;
@@ -287,17 +278,30 @@ namespace AutoService
             // grpDosyalar
             // 
             this.grpDosyalar.BackColor = System.Drawing.Color.Transparent;
+            this.grpDosyalar.Controls.Add(this.btnDosyaSil);
             this.grpDosyalar.Controls.Add(this.picDosya);
             this.grpDosyalar.Controls.Add(this.ddlKlasorler);
             this.grpDosyalar.Controls.Add(this.lstbDosyalar);
             this.grpDosyalar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpDosyalar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.grpDosyalar.Location = new System.Drawing.Point(12, 247);
+            this.grpDosyalar.Location = new System.Drawing.Point(47, 310);
             this.grpDosyalar.Name = "grpDosyalar";
-            this.grpDosyalar.Size = new System.Drawing.Size(266, 255);
+            this.grpDosyalar.Size = new System.Drawing.Size(266, 277);
             this.grpDosyalar.TabIndex = 2;
             this.grpDosyalar.TabStop = false;
             this.grpDosyalar.Text = "Dosyalar";
+            // 
+            // btnDosyaSil
+            // 
+            this.btnDosyaSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDosyaSil.ForeColor = System.Drawing.Color.Black;
+            this.btnDosyaSil.Location = new System.Drawing.Point(83, 247);
+            this.btnDosyaSil.Name = "btnDosyaSil";
+            this.btnDosyaSil.Size = new System.Drawing.Size(74, 23);
+            this.btnDosyaSil.TabIndex = 4;
+            this.btnDosyaSil.Text = "Dosya Sil";
+            this.btnDosyaSil.UseVisualStyleBackColor = true;
+            this.btnDosyaSil.Click += new System.EventHandler(this.btnDosyaSil_Click);
             // 
             // picDosya
             // 
@@ -330,6 +334,8 @@ namespace AutoService
             this.lstbDosyalar.Name = "lstbDosyalar";
             this.lstbDosyalar.Size = new System.Drawing.Size(226, 164);
             this.lstbDosyalar.TabIndex = 0;
+            this.lstbDosyalar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstbDosyalar_MouseClick);
+            this.lstbDosyalar.SelectedIndexChanged += new System.EventHandler(this.lstbDosyalar_SelectedIndexChanged);
             this.lstbDosyalar.DoubleClick += new System.EventHandler(this.lstbDosyalar_DoubleClick);
             // 
             // grpYukle
@@ -340,14 +346,13 @@ namespace AutoService
             this.grpYukle.Controls.Add(this.btnGozat);
             this.grpYukle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpYukle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.grpYukle.Location = new System.Drawing.Point(12, 247);
+            this.grpYukle.Location = new System.Drawing.Point(47, 310);
             this.grpYukle.Name = "grpYukle";
             this.grpYukle.Size = new System.Drawing.Size(266, 96);
             this.grpYukle.TabIndex = 3;
             this.grpYukle.TabStop = false;
             this.grpYukle.Text = "Yükle";
             this.grpYukle.Visible = false;
-            this.grpYukle.Enter += new System.EventHandler(this.grpYukle_Enter);
             // 
             // btnYukle
             // 
@@ -390,13 +395,69 @@ namespace AutoService
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnresimGozat
+            // 
+            this.btnresimGozat.BackColor = System.Drawing.Color.Silver;
+            this.btnresimGozat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnresimGozat.ForeColor = System.Drawing.Color.Black;
+            this.btnresimGozat.Location = new System.Drawing.Point(483, 651);
+            this.btnresimGozat.Name = "btnresimGozat";
+            this.btnresimGozat.Size = new System.Drawing.Size(70, 23);
+            this.btnresimGozat.TabIndex = 3;
+            this.btnresimGozat.Text = "Gözat";
+            this.btnresimGozat.UseVisualStyleBackColor = false;
+            this.btnresimGozat.Click += new System.EventHandler(this.btnresimGozat_Click);
+            // 
+            // btnresimYukle
+            // 
+            this.btnresimYukle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnresimYukle.ForeColor = System.Drawing.Color.Black;
+            this.btnresimYukle.Location = new System.Drawing.Point(628, 651);
+            this.btnresimYukle.Name = "btnresimYukle";
+            this.btnresimYukle.Size = new System.Drawing.Size(63, 23);
+            this.btnresimYukle.TabIndex = 3;
+            this.btnresimYukle.Text = "Yükle";
+            this.btnresimYukle.UseVisualStyleBackColor = true;
+            this.btnresimYukle.Click += new System.EventHandler(this.btnresimYukle_Click);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // btnresimSil
+            // 
+            this.btnresimSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnresimSil.ForeColor = System.Drawing.Color.Black;
+            this.btnresimSil.Location = new System.Drawing.Point(559, 651);
+            this.btnresimSil.Name = "btnresimSil";
+            this.btnresimSil.Size = new System.Drawing.Size(63, 23);
+            this.btnresimSil.TabIndex = 5;
+            this.btnresimSil.Text = "Sil";
+            this.btnresimSil.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(-1, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(722, 24);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Araç Profil________________________________________________________";
+            // 
             // AracProfilForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AutoService.Properties.Resources.arkaplan23;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(826, 680);
+            this.ClientSize = new System.Drawing.Size(711, 686);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btnresimSil);
+            this.Controls.Add(this.btnresimYukle);
+            this.Controls.Add(this.btnresimGozat);
             this.Controls.Add(this.grpYukle);
             this.Controls.Add(this.grpDosyalar);
             this.Controls.Add(this.grpTemelBilgiler);
@@ -407,7 +468,6 @@ namespace AutoService
             this.Text = "AracProfilForm";
             this.Load += new System.EventHandler(this.AracProfilForm_Load);
             this.grpFofograf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.resim1)).EndInit();
             this.grpTemelBilgiler.ResumeLayout(false);
             this.grpTemelBilgiler.PerformLayout();
             this.grpDosyalar.ResumeLayout(false);
@@ -416,6 +476,7 @@ namespace AutoService
             this.grpYukle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -449,6 +510,11 @@ namespace AutoService
         private System.Windows.Forms.Button btnYukle;
         private System.Windows.Forms.TextBox Dosyayolu;
         private System.Windows.Forms.FlowLayoutPanel pnlFotolar;
-        private System.Windows.Forms.PictureBox resim1;
+        private System.Windows.Forms.Button btnresimGozat;
+        private System.Windows.Forms.Button btnresimYukle;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.Button btnDosyaSil;
+        private System.Windows.Forms.Button btnresimSil;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,28 @@ namespace AutoService
                 cmd.Dispose();
                 return true;
 
+            }
+            catch 
+            {
+
+                return false;
+            } 
+            
+        }
+      public static bool DosyaSil(Dosya dosya)
+        {
+            try
+            {
+                SqlConnection conn = db.conn();
+                SqlCommand cmd = new SqlCommand("Delete from Dosyalar where id=@id", conn);
+                cmd.Parameters.AddWithValue("@id", dosya.id);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+
+                File.Delete(Directory.GetCurrentDirectory() + "\\AracDosyalar\\" + dosya.AracID + "\\" + dosya.KategoriAdi + dosya.Path);
+                return true;
             }
             catch 
             {

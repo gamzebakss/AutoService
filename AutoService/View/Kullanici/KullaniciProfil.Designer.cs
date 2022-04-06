@@ -30,7 +30,6 @@ namespace AutoService
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictpProfilResmi = new System.Windows.Forms.PictureBox();
             this.lblAd = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@ namespace AutoService
             this.autoServiceDataSet3 = new AutoService.AutoServiceDataSet3();
             this.araclarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.araclarTableAdapter = new AutoService.AutoServiceDataSet3TableAdapters.AraclarTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictpProfilResmi)).BeginInit();
             this.grpFotograf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet1)).BeginInit();
@@ -75,27 +73,17 @@ namespace AutoService
             ((System.ComponentModel.ISupportInitialize)(this.araclarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AutoService.Properties.Resources.baslık;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(802, 27);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(0, 14);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 24);
+            this.label1.Size = new System.Drawing.Size(780, 24);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Kullanıcı Profil";
+            this.label1.Text = "Kullanıcı Profil__________________________________________________________";
             // 
             // pictpProfilResmi
             // 
@@ -224,7 +212,7 @@ namespace AutoService
             // btnAracListele
             // 
             this.btnAracListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAracListele.Location = new System.Drawing.Point(592, 342);
+            this.btnAracListele.Location = new System.Drawing.Point(608, 352);
             this.btnAracListele.Name = "btnAracListele";
             this.btnAracListele.Size = new System.Drawing.Size(130, 27);
             this.btnAracListele.TabIndex = 25;
@@ -235,7 +223,7 @@ namespace AutoService
             // lstbxKullanıcıProfil
             // 
             this.lstbxKullanıcıProfil.FormattingEnabled = true;
-            this.lstbxKullanıcıProfil.Location = new System.Drawing.Point(12, 312);
+            this.lstbxKullanıcıProfil.Location = new System.Drawing.Point(42, 314);
             this.lstbxKullanıcıProfil.Name = "lstbxKullanıcıProfil";
             this.lstbxKullanıcıProfil.Size = new System.Drawing.Size(560, 251);
             this.lstbxKullanıcıProfil.TabIndex = 26;
@@ -253,7 +241,7 @@ namespace AutoService
             // btnAracEkle
             // 
             this.btnAracEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAracEkle.Location = new System.Drawing.Point(592, 385);
+            this.btnAracEkle.Location = new System.Drawing.Point(608, 395);
             this.btnAracEkle.Name = "btnAracEkle";
             this.btnAracEkle.Size = new System.Drawing.Size(130, 27);
             this.btnAracEkle.TabIndex = 28;
@@ -264,7 +252,7 @@ namespace AutoService
             // btnAracDuzenle
             // 
             this.btnAracDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAracDuzenle.Location = new System.Drawing.Point(592, 432);
+            this.btnAracDuzenle.Location = new System.Drawing.Point(608, 442);
             this.btnAracDuzenle.Name = "btnAracDuzenle";
             this.btnAracDuzenle.Size = new System.Drawing.Size(130, 27);
             this.btnAracDuzenle.TabIndex = 29;
@@ -275,7 +263,7 @@ namespace AutoService
             // btnAracSil
             // 
             this.btnAracSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAracSil.Location = new System.Drawing.Point(592, 474);
+            this.btnAracSil.Location = new System.Drawing.Point(608, 484);
             this.btnAracSil.Name = "btnAracSil";
             this.btnAracSil.Size = new System.Drawing.Size(130, 27);
             this.btnAracSil.TabIndex = 30;
@@ -424,13 +412,12 @@ namespace AutoService
             this.Controls.Add(this.btnYükle);
             this.Controls.Add(this.grpFotograf);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KullaniciProfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KullaniciProfil";
+            this.Text = "__KullaniciProfil________________________________________________________________" +
+    "__________";
             this.Load += new System.EventHandler(this.KullaniciProfil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictpProfilResmi)).EndInit();
             this.grpFotograf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet1)).EndInit();
@@ -447,8 +434,6 @@ namespace AutoService
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictpProfilResmi;
         private System.Windows.Forms.Label lblAd;

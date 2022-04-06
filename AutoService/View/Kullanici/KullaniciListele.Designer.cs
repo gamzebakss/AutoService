@@ -30,13 +30,8 @@ namespace AutoService
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kullanicilarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autoServiceDataSet = new AutoService.AutoServiceDataSet();
-            this.kullanicilarTableAdapter = new AutoService.AutoServiceDataSetTableAdapters.KullanicilarTableAdapter();
-            this.btniptal = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,21 +42,14 @@ namespace AutoService
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.olusturmaTarihiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.islemler = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.kullanicilarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoServiceDataSet = new AutoService.AutoServiceDataSet();
+            this.kullanicilarTableAdapter = new AutoService.AutoServiceDataSetTableAdapters.KullanicilarTableAdapter();
+            this.btniptal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kullanicilarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AutoService.Properties.Resources.baslık;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1057, 27);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -69,11 +57,12 @@ namespace AutoService
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(-2, 13);
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 24);
+            this.label1.Size = new System.Drawing.Size(1068, 24);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Kullanıcı Listele";
+            this.label1.Text = "Kullanıcı Listele________________________________________________________________" +
+    "___________________";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
@@ -97,31 +86,6 @@ namespace AutoService
             this.dataGridView1.Size = new System.Drawing.Size(1044, 454);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // kullanicilarBindingSource
-            // 
-            this.kullanicilarBindingSource.DataMember = "Kullanicilar";
-            this.kullanicilarBindingSource.DataSource = this.autoServiceDataSet;
-            // 
-            // autoServiceDataSet
-            // 
-            this.autoServiceDataSet.DataSetName = "AutoServiceDataSet";
-            this.autoServiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kullanicilarTableAdapter
-            // 
-            this.kullanicilarTableAdapter.ClearBeforeFill = true;
-            // 
-            // btniptal
-            // 
-            this.btniptal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btniptal.Location = new System.Drawing.Point(634, 511);
-            this.btniptal.Name = "btniptal";
-            this.btniptal.Size = new System.Drawing.Size(98, 23);
-            this.btniptal.TabIndex = 11;
-            this.btniptal.Text = "İptal";
-            this.btniptal.UseVisualStyleBackColor = true;
-            this.btniptal.Click += new System.EventHandler(this.btniptal_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -183,6 +147,31 @@ namespace AutoService
             this.islemler.HeaderText = "İşlemler";
             this.islemler.Name = "islemler";
             // 
+            // kullanicilarBindingSource
+            // 
+            this.kullanicilarBindingSource.DataMember = "Kullanicilar";
+            this.kullanicilarBindingSource.DataSource = this.autoServiceDataSet;
+            // 
+            // autoServiceDataSet
+            // 
+            this.autoServiceDataSet.DataSetName = "AutoServiceDataSet";
+            this.autoServiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kullanicilarTableAdapter
+            // 
+            this.kullanicilarTableAdapter.ClearBeforeFill = true;
+            // 
+            // btniptal
+            // 
+            this.btniptal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btniptal.Location = new System.Drawing.Point(426, 509);
+            this.btniptal.Name = "btniptal";
+            this.btniptal.Size = new System.Drawing.Size(177, 23);
+            this.btniptal.TabIndex = 11;
+            this.btniptal.Text = "İptal";
+            this.btniptal.UseVisualStyleBackColor = true;
+            this.btniptal.Click += new System.EventHandler(this.btniptal_Click);
+            // 
             // KullaniciListele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,13 +182,11 @@ namespace AutoService
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KullaniciListele";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KullaniciListele";
             this.Load += new System.EventHandler(this.KullaniciListele_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kullanicilarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet)).EndInit();
@@ -209,8 +196,6 @@ namespace AutoService
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private AutoServiceDataSet autoServiceDataSet;

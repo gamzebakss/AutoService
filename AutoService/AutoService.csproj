@@ -76,6 +76,7 @@
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\Tools.cs" />
     <Compile Include="Model\Arac.cs" />
+    <Compile Include="Model\AracFotolari.cs" />
     <Compile Include="Model\AracModel.cs" />
     <Compile Include="Model\Dosya.cs" />
     <Compile Include="Model\DosyaKategori.cs" />
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="View\Arac\AracProfilForm.Designer.cs">
       <DependentUpon>AracProfilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\IsEmri\IsEmriAracKabulForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\IsEmri\IsEmriAracKabulForm.Designer.cs">
+      <DependentUpon>IsEmriAracKabulForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Kullanici\KullaniciKayitForm.cs">
       <SubType>Form</SubType>
@@ -133,6 +140,12 @@
     <Compile Include="View\Shared\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Shared\FotolariGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Shared\FotolariGoster.Designer.cs">
+      <DependentUpon>FotolariGoster.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Shared\MesajKutusu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +168,9 @@
     <EmbeddedResource Include="View\Arac\AracProfilForm.resx">
       <DependentUpon>AracProfilForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\IsEmri\IsEmriAracKabulForm.resx">
+      <DependentUpon>IsEmriAracKabulForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Kullanici\KullaniciKayitForm.resx">
       <DependentUpon>KullaniciKayitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Shared\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Shared\FotolariGoster.resx">
+      <DependentUpon>FotolariGoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Shared\MesajKutusu.resx">
       <DependentUpon>MesajKutusu.cs</DependentUpon>

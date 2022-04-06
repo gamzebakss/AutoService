@@ -20,28 +20,23 @@ namespace AutoService
             _arac = AracControllers.Getir(aracID);
 
             InitializeComponent();
-
+            AracBilgileriniDoldur();
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AracProfilForm_Load(object sender, EventArgs e)
+        private void AracBilgileriniDoldur()
         {
             lblModel.Text = _arac.Model.Ad;
             lblPlaka.Text = _arac.Plaka; ;
             lblRenk.Text = _arac.Renk;
             lblSasiNo.Text = _arac.SasiNo;
             lblYil.Text = _arac.Yil.ToString();
+
+            DosyalariDoldur();
+        }
+        private void DosyalariDoldur()
+        {
 
             List<DosyaKategori> dosyaKategoris = DosyaKategoriContollers.List();
             dosyaKategoris.Add(new DosyaKategori { id = 0, Ad = "Hepsi" });
@@ -54,27 +49,58 @@ namespace AutoService
             lstbDosyalar.ValueMember = "id";
             lstbDosyalar.DisplayMember = "Ad";
 
+            FotolariDoldur();
+        }
+
+        private void FotolariDoldur()
+        {
+            pnlFotolar.Controls.Clear();
 
             foreach (Fotograf f in _arac.Fotolar)//bellekte pictureboxs oluşturduk 
             {
+                FlowLayoutPanel pnlPicture = new FlowLayoutPanel();
+                pnlPicture.FlowDirection = FlowDirection.TopDown;
+                pnlPicture.Width = 150;
+                pnlPicture.Height = 180;
+
+
+
                 PictureBox pic = new PictureBox();
-                pic.Image = Image.FromFile(Application.StartupPath + "\\AracFotolari\\" + _arac.id + "\\" + f.Path);
-                pic.Width = 150;
-                pic.Height = 150;
+                pic.Image = Image.FromFile(Application.StartupPath + "\\Fotograflar\\" + _arac.id + "\\" + f.Path);
+                pic.Width = 160;
+                pic.Height = 160;
                 pic.Name = "pictureBoxs-" + f.id;
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.DoubleClick += picDouble;
+                pnlPicture.Controls.Add(pic);
+
+                Button btn = new Button();
+                btn.Text = "Sil";
+                btn.Tag = f;
+                btn.ForeColor = Color.White;
+                btn.BackColor = Color.Red;
+                btn.Click += Btn_Click;
+               
+
+
                 pnlFotolar.Controls.Add(pic);
-                pic.DoubleClick += picFoto_DoubleClick;
 
             }
-
         }
 
-        private void picFoto_DoubleClick(object sender,EventArgs e)
+        private void Btn_Click(object sender, EventArgs e)
         {
-            //FotoGosterFrom frm = new FotoGosterFrom();
-            //frm
+
+            FotoControllers.Sil((((sender as Button).Tag) as Fotograf));
+            _arac.Fotolar = FotoControllers.Getir(_arac.id);
+            FotolariDoldur();
         }
+        private void picDouble(object sender, EventArgs e)
+        {
+            FotolariGoster frm = new FotolariGoster((sender as PictureBox).Image);
+            frm.ShowDialog();
+        }
+
 
 
         private void grpTemelBilgiler_Enter(object sender, EventArgs e)
@@ -103,9 +129,9 @@ namespace AutoService
         {
 
 
-        
+
             openFileDialog1.Filter = "PNG|*.png|JPG|*.jpg|JPEG|*.jpeg|GIF|*.gif";
-            
+
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -141,8 +167,6 @@ namespace AutoService
             }
 
 
-
-
         }
 
         private void btnYukle_Click(object sender, EventArgs e)
@@ -158,12 +182,12 @@ namespace AutoService
 
                 File.Copy(openFileDialog1.FileName, Directory.GetCurrentDirectory() + "\\AracDosyalari\\" + _arac.id + "\\" + ((DosyaKategori)ddlKlasorler.SelectedItem).Ad + "\\" + dosyaAdi);
 
-               if( DosyaControllers.DosyaKaydet(new Dosya
+                if (DosyaControllers.DosyaKaydet(new Dosya
                 {
-                    Ad=dosyaAdi,
-                    AracID=_arac.id,
-                    KategoriID=((DosyaKategori)ddlKlasorler.SelectedItem).id,
-                    Path=dosyaAdi
+                    Ad = dosyaAdi,
+                    AracID = _arac.id,
+                    KategoriID = ((DosyaKategori)ddlKlasorler.SelectedItem).id,
+                    Path = dosyaAdi
                 }))
                 {
                     MesajKutusu kutu = new MesajKutusu("BİLGİ", "Dosya Yükleme Başarılı Bir Şekilde Gerçekleşmiştir", MesajIkon.Bilgi, MesajButton.Tamam);
@@ -183,27 +207,90 @@ namespace AutoService
 
 
         }
-        private void grpYukle_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void lstbDosyalar_DoubleClick(object sender, EventArgs e)
         {
-           
-                Dosya dosya = lstbDosyalar.SelectedItem as Dosya;
-                Process.Start(Application.StartupPath + "\\AracDosyalari\\" + _arac.id + "\\" + ((DosyaKategori)ddlKlasorler.SelectedItem).Ad + "\\" + dosya.KategoriID+ dosya.Path);
-        
+
+            Dosya dosya = lstbDosyalar.SelectedItem as Dosya;
+            Process.Start(Application.StartupPath + "\\AracDosyalari\\" + _arac.id + "\\" + ((DosyaKategori)ddlKlasorler.SelectedItem).Ad + "\\" + dosya.KategoriID + dosya.Path);
+
+        }
+
+
+
+
+
+        private void AracProfilForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void resim1_Click(object sender, EventArgs e)
         {
 
+
+
         }
 
-        private void pnlFotolar_Paint(object sender, PaintEventArgs e)
+        private void btnresimGozat_Click(object sender, EventArgs e)
+        {
+            openFileDialog2.ShowDialog();
+
+        }
+
+        private void btnresimYukle_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(Directory.GetCurrentDirectory() + "\\Fotograflar\\" + _arac.id))
+            {
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\Fotograflar\\" + _arac.id);
+            }
+
+            string dosyaAdi = Tools.TurkceKarakterTemizle(Tools.RandomString(6) + "-" + openFileDialog2.SafeFileName);
+
+            File.Copy(openFileDialog2.FileName, Directory.GetCurrentDirectory() + "\\Fotograflar\\" + _arac.id + "\\" + dosyaAdi);
+
+            if (FotoControllers.FotoKaydet(new Fotograf
+            {
+                Ad = dosyaAdi,
+                AracID = _arac.id,
+                Path = dosyaAdi
+            }))
+            {
+                MesajKutusu kutu = new MesajKutusu("Başarılı", "Dosya yükleme başarıyla tamamlanmıştır", MesajIkon.Uyari, MesajButton.Tamam);
+                kutu.ShowDialog();
+
+                _arac.Fotolar = FotoControllers.ListeGetir(_arac.id);
+                FotolariDoldur();
+            }
+            else
+            {
+                MesajKutusu kutu = new MesajKutusu("hata", "Lütfen bir klasör seciniz", MesajIkon.Uyari, MesajButton.Tamam);
+                kutu.ShowDialog();
+            }
+
+        }
+
+        private void btnDosyaSil_Click(object sender, EventArgs e)
+        {
+            Dosya dosya = lstbDosyalar.SelectedItem as Dosya;
+            if (dosya!=null)
+            {
+                DosyaControllers.DosyaSil(dosya);
+                _arac.Dosyalar = DosyaControllers.ListeGetir(_arac.id);
+                DosyalariDoldur();
+            }
+
+        }
+
+        private void lstbDosyalar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstbDosyalar_MouseClick(object sender, MouseEventArgs e)
         {
 
         }
     }
 }
+

@@ -41,14 +41,14 @@ namespace AutoService
             List<Arac> list = new List<Arac>();
 
              SqlConnection conn = db.conn();
-            SqlCommand cmd= new SqlCommand("Select a.*,m.Ad as Model from Araclar a,Modeller m where   m.id=a.ModelID and KullaniciID=@kullaniciid", conn);
+            SqlCommand cmd= new SqlCommand("Select * from Araclar where KullaniciID=@kullaniciid", conn);
             cmd.Parameters.AddWithValue("@kullaniciid",KullaniciID);
             conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
-                list.Add(new Arac { id = (int)dr["id"], Plaka = dr["Plaka"].ToString(), ModelID = (int)dr["ModelID"], SasiNo = dr["SasiNo"].ToString(), Yil = (int)dr["Yil"], Renk = dr["Renk"].ToString(), KullaniciID = (int)dr["KullaniciId"] });
+                list.Add(new Arac { id = (int)dr["id"], Plaka = dr["Plaka"].ToString(), ModelID = (int)dr["ModelID"], SasiNo = dr["SasiNo"].ToString(), Yil = (int)dr["Yil"], Renk = dr["Renk"].ToString(), KullaniciID = (int)dr["KullaniciId"], Model=AracModelControllers.GetirByAracID((int)dr["id"])});
             }
 
             conn.Close();
@@ -80,6 +80,41 @@ namespace AutoService
 
             return arac;
         
+        }
+
+
+        public static Arac Getir(string Plaka)
+        {
+            Arac arac = new Arac();
+            SqlConnection conn = db.conn();
+            SqlCommand cmd = new SqlCommand("Select [id],[Plaka],[ModelID],[SasiNo],[Yil],[Renk],[KullaniciID] From Araclar where Plaka LIKE @plaka", conn);
+            cmd.Parameters.AddWithValue("@plaka", Plaka);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            if (dr.HasRows)
+            {
+                arac.Renk = dr["Renk"].ToString();
+                arac.KullaniciID = (int)dr["KullaniciID"];
+                arac.Plaka = dr["Plaka"].ToString();
+                arac.ModelID = (int)dr["ModelID"];
+                arac.SasiNo = dr["SasiNo"].ToString();
+                arac.Yil = (int)dr["Yil"];
+                arac.id = (int)dr["id"];
+                arac.Dosyalar = DosyaControllers.ListeGetir((int)dr["id"]);
+                arac.Model = AracModelControllers.GetirByAracID((int)dr["id"]);
+                arac.Fotolar = FotoControllers.Getir((int)dr["id"]);
+            }
+            else
+            {
+                arac.id = 0;
+            }
+            conn.Close();
+
+
+            return arac;
+
         }
     }
 }

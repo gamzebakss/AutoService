@@ -20,7 +20,12 @@ namespace AutoService
         public List<Fotograf> Fotolar { get; set; }
         public List<Dosya> Dosyalar { get; set; }
 
+        public string Ad
+        {
+            get { return id + "-" + Plaka + "-" + Model.Ad; }
+            set { }
+        }
+
     }
-    //HASAN TEST TEST TEST
-    //test 22
+
 }

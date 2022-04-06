@@ -119,7 +119,7 @@ namespace AutoService
             // btnAracEkle
             // 
             this.btnAracEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAracEkle.Location = new System.Drawing.Point(129, 411);
+            this.btnAracEkle.Location = new System.Drawing.Point(64, 361);
             this.btnAracEkle.Name = "btnAracEkle";
             this.btnAracEkle.Size = new System.Drawing.Size(121, 26);
             this.btnAracEkle.TabIndex = 8;
@@ -226,7 +226,7 @@ namespace AutoService
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(107, 90);
+            this.groupBox1.Location = new System.Drawing.Point(42, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(304, 304);
             this.groupBox1.TabIndex = 18;
@@ -236,7 +236,7 @@ namespace AutoService
             // btniptal
             // 
             this.btniptal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btniptal.Location = new System.Drawing.Point(273, 411);
+            this.btniptal.Location = new System.Drawing.Point(208, 361);
             this.btniptal.Name = "btniptal";
             this.btniptal.Size = new System.Drawing.Size(121, 26);
             this.btniptal.TabIndex = 19;
@@ -250,7 +250,7 @@ namespace AutoService
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AutoService.Properties.Resources.arkaplan2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(547, 515);
+            this.ClientSize = new System.Drawing.Size(398, 431);
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAracEkle);

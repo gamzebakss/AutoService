@@ -42,7 +42,6 @@ namespace AutoService
             this.txtGsm = new System.Windows.Forms.MaskedTextBox();
             this.lblAdres = new System.Windows.Forms.Label();
             this.lblGsm = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grupKurumsalBilgiler = new System.Windows.Forms.GroupBox();
             this.txtVergiNo = new System.Windows.Forms.TextBox();
             this.txtVergiD = new System.Windows.Forms.TextBox();
@@ -61,7 +60,6 @@ namespace AutoService
             this.label1 = new System.Windows.Forms.Label();
             this.grupTemelBigiler.SuspendLayout();
             this.grupiletisim.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grupKurumsalBilgiler.SuspendLayout();
             this.grupGirisBilgiler.SuspendLayout();
             this.SuspendLayout();
@@ -210,16 +208,6 @@ namespace AutoService
             this.lblGsm.Size = new System.Drawing.Size(46, 15);
             this.lblGsm.TabIndex = 2;
             this.lblGsm.Text = "GSM :";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AutoService.Properties.Resources.baslık;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(739, 27);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // grupKurumsalBilgiler
             // 
@@ -385,11 +373,11 @@ namespace AutoService
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(-5, 15);
+            this.label1.Location = new System.Drawing.Point(1, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 24);
+            this.label1.Size = new System.Drawing.Size(755, 24);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Kullanıcı Kayıt";
+            this.label1.Text = "Kullanıcı Kayıt________________________________________________________";
             // 
             // KullaniciKayitForm
             // 
@@ -404,7 +392,6 @@ namespace AutoService
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.grupGirisBilgiler);
             this.Controls.Add(this.grupKurumsalBilgiler);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grupiletisim);
             this.Controls.Add(this.grupTemelBigiler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -416,7 +403,6 @@ namespace AutoService
             this.grupTemelBigiler.PerformLayout();
             this.grupiletisim.ResumeLayout(false);
             this.grupiletisim.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grupKurumsalBilgiler.ResumeLayout(false);
             this.grupKurumsalBilgiler.PerformLayout();
             this.grupGirisBilgiler.ResumeLayout(false);
@@ -435,7 +421,6 @@ namespace AutoService
         private System.Windows.Forms.Label lblAd;
         private System.Windows.Forms.Label lblAdres;
         private System.Windows.Forms.Label lblGsm;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox grupKurumsalBilgiler;
         private System.Windows.Forms.Label lblVergiN;
         private System.Windows.Forms.Label lblVergiD;

@@ -41,10 +41,13 @@ namespace AutoService
         private void KullaniciProfil_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'autoServiceDataSet3.Araclar' table. You can move, or remove it, as needed.
-            this.araclarTableAdapter.Fill(this.autoServiceDataSet3.Araclar);
+
+            
+
+           
             lstbxKullanıcıProfil.DataSource = AracControllers.Listele(_kul.id);
             lstbxKullanıcıProfil.ValueMember = "id";
-            lstbxKullanıcıProfil.DisplayMember = "Plaka";
+            lstbxKullanıcıProfil.DisplayMember = "Ad";
 
 
 
@@ -143,8 +146,9 @@ namespace AutoService
 
         private void btnAracListele_Click(object sender, EventArgs e)
         {
-            
-           
+            AracProfilForm aracProfilForm = new AracProfilForm((lstbxKullanıcıProfil.SelectedItem as Arac).id);
+            aracProfilForm.ShowDialog();
+
         }
 
         private void lblAd_Click(object sender, EventArgs e)
