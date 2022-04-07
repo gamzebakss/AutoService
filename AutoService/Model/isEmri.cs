@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace AutoService
 {
-  public  class isEmri
+    public class isEmri
     {
         public int id { get; set; }
         public int AracID { get; set; }
-        public DateTime OlusturmaTarihi{ get; set; }
-        public string Aciklama { get; set;}
+        public DateTime OlusturmaTarihi { get; set; }
+        public string Aciklama { get; set; }
         public int Durum { get; set; }
         public string TeslimEden { get; set; }
         public string TeslimAlan { get; set; }
-
+        public IsEmriTuru IsEmriTuru { get; set; }
+       
 
     }
 }

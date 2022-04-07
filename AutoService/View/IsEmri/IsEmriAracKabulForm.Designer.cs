@@ -55,7 +55,12 @@ namespace AutoService
             this.txtTeslimeden = new System.Windows.Forms.TextBox();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.autoServiceDataSet1 = new AutoService.AutoServiceDataSet();
+            this.cmblistGelisSebebi = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnPdf = new System.Windows.Forms.Button();
             this.grpAracBilgileri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAracPlakasi
@@ -275,7 +280,7 @@ namespace AutoService
             this.txtMusteriAciklamasi.Location = new System.Drawing.Point(181, 374);
             this.txtMusteriAciklamasi.Multiline = true;
             this.txtMusteriAciklamasi.Name = "txtMusteriAciklamasi";
-            this.txtMusteriAciklamasi.Size = new System.Drawing.Size(357, 99);
+            this.txtMusteriAciklamasi.Size = new System.Drawing.Size(357, 128);
             this.txtMusteriAciklamasi.TabIndex = 4;
             // 
             // label13
@@ -283,7 +288,7 @@ namespace AutoService
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.Location = new System.Drawing.Point(68, 546);
+            this.label13.Location = new System.Drawing.Point(68, 610);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(98, 16);
             this.label13.TabIndex = 5;
@@ -294,7 +299,7 @@ namespace AutoService
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(63, 508);
+            this.label14.Location = new System.Drawing.Point(63, 572);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(103, 16);
             this.label14.TabIndex = 6;
@@ -302,14 +307,14 @@ namespace AutoService
             // 
             // txtTeslimAlan
             // 
-            this.txtTeslimAlan.Location = new System.Drawing.Point(181, 548);
+            this.txtTeslimAlan.Location = new System.Drawing.Point(181, 612);
             this.txtTeslimAlan.Name = "txtTeslimAlan";
             this.txtTeslimAlan.Size = new System.Drawing.Size(357, 20);
             this.txtTeslimAlan.TabIndex = 7;
             // 
             // txtTeslimeden
             // 
-            this.txtTeslimeden.Location = new System.Drawing.Point(181, 508);
+            this.txtTeslimeden.Location = new System.Drawing.Point(181, 572);
             this.txtTeslimeden.Name = "txtTeslimeden";
             this.txtTeslimeden.Size = new System.Drawing.Size(357, 20);
             this.txtTeslimeden.TabIndex = 8;
@@ -318,12 +323,13 @@ namespace AutoService
             // 
             this.btnKaydet.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(279, 589);
+            this.btnKaydet.Location = new System.Drawing.Point(181, 653);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(184, 23);
             this.btnKaydet.TabIndex = 9;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // label15
             // 
@@ -337,13 +343,53 @@ namespace AutoService
             this.label15.TabIndex = 10;
             this.label15.Text = "İş Emirleri________________________________________________";
             // 
+            // autoServiceDataSet1
+            // 
+            this.autoServiceDataSet1.DataSetName = "AutoServiceDataSet";
+            this.autoServiceDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmblistGelisSebebi
+            // 
+            this.cmblistGelisSebebi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmblistGelisSebebi.FormattingEnabled = true;
+            this.cmblistGelisSebebi.Location = new System.Drawing.Point(181, 529);
+            this.cmblistGelisSebebi.Name = "cmblistGelisSebebi";
+            this.cmblistGelisSebebi.Size = new System.Drawing.Size(357, 21);
+            this.cmblistGelisSebebi.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Location = new System.Drawing.Point(52, 529);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(106, 16);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Geliş Sebebi :";
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPdf.Location = new System.Drawing.Point(378, 653);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(160, 23);
+            this.btnPdf.TabIndex = 13;
+            this.btnPdf.Text = "PDF  Oluştur";
+            this.btnPdf.UseVisualStyleBackColor = false;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // IsEmriAracKabulForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AutoService.Properties.Resources.arkaplan2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(615, 624);
+            this.ClientSize = new System.Drawing.Size(615, 694);
+            this.Controls.Add(this.btnPdf);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.cmblistGelisSebebi);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtTeslimeden);
@@ -362,6 +408,7 @@ namespace AutoService
             this.Load += new System.EventHandler(this.IsEmriAracKabulForm_Load);
             this.grpAracBilgileri.ResumeLayout(false);
             this.grpAracBilgileri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoServiceDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,5 +442,9 @@ namespace AutoService
         private System.Windows.Forms.TextBox txtTeslimeden;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Label label15;
+        private AutoServiceDataSet autoServiceDataSet1;
+        private System.Windows.Forms.ComboBox cmblistGelisSebebi;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnPdf;
     }
 }

@@ -15,57 +15,21 @@ namespace AutoService
     {
         private Kullanici _kul { get; set; }
 
-        public KullaniciProfil(int kullaniciID)
+       public KullaniciProfil(int kullaniciID)
         {
-            _kul = KullaniciController.BilgileriGetir(kullaniciID);
-            InitializeComponent();
-            pictpProfilResmi.ImageLocation = Application.StartupPath + "\\ProfilFotolari\\" + _kul.ProfilFoto;
-            string deneme = Tools.RandomString(6);
-            lblAdSoyad.Text = _kul.Ad + " " + _kul.Soyad;
-            lblKullanıcıProfilAdres.Text = _kul.Adres;
-            lblKullanıcıProfilGm.Text = _kul.Gsm;
-            lblKullanıcıProfilEmail.Text = _kul.Email;
-            lblKullanıcıProfilTicariU.Text = _kul.TicariUnvan;
-            lblKullanıcıProfilVergiN.Text = _kul.VergiNo;
-            lblVergiDairesi.Text = _kul.VergiDairesi;
-           
-
-            if(_kul.MusteriTipi==1)
-            {
-                lblMusteriTipi.Text = "KURUMSAL";
-                pnlKurumsal.Visible = true;
-            }
+           _kul = KullaniciController.BilgileriGetir(kullaniciID);
+            InitializeComponent();  
 
         }
 
         private void KullaniciProfil_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoServiceDataSet3.Araclar' table. You can move, or remove it, as needed.
+         
+            AraclariDoldur();
 
-            
-
-           
-            lstbxKullanıcıProfil.DataSource = AracControllers.Listele(_kul.id);
-            lstbxKullanıcıProfil.ValueMember = "id";
-            lstbxKullanıcıProfil.DisplayMember = "Ad";
-
-
-
-            // TODO: This line of code loads data into the 'autoServiceDataSet1.Kullanicilar' table. You can move, or remove it, as needed.
             this.kullanicilarTableAdapter.Fill(this.autoServiceDataSet1.Kullanicilar);
 
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void grpFotograf_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnYükle_Click(object sender, EventArgs e)
         {
             try
@@ -109,39 +73,18 @@ namespace AutoService
                     }
 
                 }
-
-
-
-
             }
             catch (Exception ex)
             {
 
-
             }
-
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAracEkle_Click(object sender, EventArgs e)
         {
             AracEkle frm = new AracEkle(_kul.id);
             frm.ShowDialog();
-        }
-
-        private void btniptal_Click(object sender, EventArgs e)
-        {
-           
+            AraclariDoldur();
         }
 
         private void btnAracListele_Click(object sender, EventArgs e)
@@ -151,26 +94,29 @@ namespace AutoService
 
         }
 
-        private void lblAd_Click(object sender, EventArgs e)
+        private void AraclariDoldur()
         {
+           
+            pictpProfilResmi.ImageLocation = Application.StartupPath + "\\ProfilFotolari\\" + _kul.ProfilFoto;
+            string deneme = Tools.RandomString(6);
+            lblAdSoyad.Text = _kul.Ad + " " + _kul.Soyad;
+            lblKullanıcıProfilAdres.Text = _kul.Adres;
+            lblKullanıcıProfilGm.Text = _kul.Gsm;
+            lblKullanıcıProfilEmail.Text = _kul.Email;
+            lblKullanıcıProfilTicariU.Text = _kul.TicariUnvan;
+            lblKullanıcıProfilVergiN.Text = _kul.VergiNo;
+            lblVergiDairesi.Text = _kul.VergiDairesi;
 
+            lstbxKullanıcıProfil.DataSource = AracControllers.Listele(_kul.id);
+            lstbxKullanıcıProfil.ValueMember = "id";
+            lstbxKullanıcıProfil.DisplayMember = "Ad";
 
-
+            if (_kul.MusteriTipi == 1)
+            {
+                lblMusteriTipi.Text = "KURUMSAL";
+                pnlKurumsal.Visible = true;
+            }
         }
-
-        private void btnAracDuzenle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlKurumsal_Paint(object sender, PaintEventArgs e)
-        {
-
-
-
-
-
-
-        }
+      
     }
 }

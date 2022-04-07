@@ -106,7 +106,7 @@ namespace AutoService
             this.lblAd.Size = new System.Drawing.Size(84, 16);
             this.lblAd.TabIndex = 12;
             this.lblAd.Text = "Ad Soyad :";
-            this.lblAd.Click += new System.EventHandler(this.lblAd_Click);
+      
             // 
             // label3
             // 
@@ -131,7 +131,7 @@ namespace AutoService
             this.label4.Size = new System.Drawing.Size(104, 16);
             this.label4.TabIndex = 15;
             this.label4.Text = "Ticari Ünvan :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+         
             // 
             // label5
             // 
@@ -168,7 +168,7 @@ namespace AutoService
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "Adres  :";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            
             // 
             // grpFotograf
             // 
@@ -182,7 +182,7 @@ namespace AutoService
             this.grpFotograf.TabIndex = 22;
             this.grpFotograf.TabStop = false;
             this.grpFotograf.Text = "Fotoğraf";
-            this.grpFotograf.Enter += new System.EventHandler(this.grpFotograf_Enter);
+        
             // 
             // btnYükle
             // 
@@ -227,6 +227,7 @@ namespace AutoService
             this.lstbxKullanıcıProfil.Name = "lstbxKullanıcıProfil";
             this.lstbxKullanıcıProfil.Size = new System.Drawing.Size(560, 251);
             this.lstbxKullanıcıProfil.TabIndex = 26;
+          
             // 
             // lblMusteriTipi
             // 
@@ -258,7 +259,7 @@ namespace AutoService
             this.btnAracDuzenle.TabIndex = 29;
             this.btnAracDuzenle.Text = "Araç Düzenle";
             this.btnAracDuzenle.UseVisualStyleBackColor = true;
-            this.btnAracDuzenle.Click += new System.EventHandler(this.btnAracDuzenle_Click);
+            
             // 
             // btnAracSil
             // 
@@ -341,7 +342,7 @@ namespace AutoService
             this.pnlKurumsal.Name = "pnlKurumsal";
             this.pnlKurumsal.Size = new System.Drawing.Size(227, 196);
             this.pnlKurumsal.TabIndex = 38;
-            this.pnlKurumsal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlKurumsal_Paint);
+         
             // 
             // lblVergiDairesi
             // 
