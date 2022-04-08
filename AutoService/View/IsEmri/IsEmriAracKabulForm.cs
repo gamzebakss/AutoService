@@ -1,5 +1,6 @@
 ﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,13 +25,13 @@ namespace AutoService
             cmblistGelisSebebi.DataSource = IsEmriTuruControllers.Listele();
             cmblistGelisSebebi.ValueMember = "id";
             cmblistGelisSebebi.DisplayMember = "Ad";
-               
+
         }
 
         public List<Arac> _araclar { get; set; }
 
         public Arac _seciliArac { get; set; }
-      
+
         private void IsEmriAracKabulForm_Load(object sender, EventArgs e)
         {
 
@@ -47,8 +48,8 @@ namespace AutoService
                 lblRenk.Text = _seciliArac.Renk;
                 lblSasiNo.Text = _seciliArac.SasiNo;
                 lblYil.Text = _seciliArac.Yil.ToString();
-              
-                
+
+
             }
             else
             {
@@ -114,7 +115,7 @@ namespace AutoService
         {
             if (cmblistGelisSebebi.SelectedValue.ToString() != "0")
             {
-                if (IsEmriControllers.Ekle(new isEmri { Aciklama = txtMusteriAciklamasi.Text, Durum = 0, IsEmriTuru = cmblistGelisSebebi.SelectedItem as IsEmriTuru, TeslimAlan = txtTeslimAlan.Text, TeslimEden = txtTeslimAlan.Text, AracID =_seciliArac.id}))
+                if (IsEmriControllers.Ekle(new isEmri { Aciklama = txtMusteriAciklamasi.Text, Durum = 0, IsEmriTuru = cmblistGelisSebebi.SelectedItem as IsEmriTuru, TeslimAlan = txtTeslimAlan.Text, TeslimEden = txtTeslimAlan.Text,Arac= _seciliArac}))
                 {
                     PdfOlustur();
                     MesajKutusu kutu = new MesajKutusu("İşlem Başarılı", "Araç Kabul işlemi kaydedildi", MesajIkon.Bilgi, MesajButton.Tamam);
@@ -142,87 +143,56 @@ namespace AutoService
             }
             cmblistGelisSebebi.SelectedValue = 0;
         }
-
         private void PdfOlustur()
         {
-            PdfDocument pdf= new PdfDocument();
+            PdfDocument pdf = PdfReader.Open("sablon.pdf", PdfDocumentOpenMode.Modify);
             pdf.Info.Title = "Araç Kabul Formu";
 
+            PdfPage sayfa = pdf.Pages[0];
 
-            PdfPage sayfa = pdf.AddPage();
-
-            sayfa.Orientation = PdfSharp.PageOrientation.Landscape;//Sayfanın yatay oluşunu ayarlıyoruz.
-            sayfa.Size = PdfSharp.PageSize.A5;//sayfanın a5 formatında açılmasını sağlıyoruz.
-
-
-            XGraphics grafik = XGraphics.FromPdfPage(sayfa);
+            XGraphics gfx = XGraphics.FromPdfPage(sayfa);
 
             XFont h1 = new XFont("Verdana", 25, XFontStyle.Bold);
             XFont h3 = new XFont("Verdana", 15, XFontStyle.Bold);
-            XBrush kirmizifirca = XBrushes.Red;
-            XBrush Siyahfirca = XBrushes.Black;
+            XFont h3u = new XFont("Verdana", 15, XFontStyle.Underline);
+            XBrush KirmiziFirca = XBrushes.Red;
+            XBrush Siyah = XBrushes.Black;
 
-            //Sayfamızın ortalanmış başlığı
-            grafik.DrawString("Araç Kabul Formu", h1, Siyahfirca, new XRect(0, 0, sayfa.Width, sayfa.Height), XStringFormat.TopCenter);
+            //Sayfamızın ortalanmış başlığı, 
 
-            //Tarihi sol üst köşeye yazdık
-            grafik.DrawString(DateTime.Now.ToShortDateString(), h3, Siyahfirca, new XRect(0, 0, sayfa.Width, sayfa.Height), XStringFormat.TopCenter);
+            //Tarihi sol üst köşeye yazdık.
+            gfx.DrawString(DateTime.Now.ToShortDateString(), h3, Siyah, sayfa.Width - 100, 20);
 
             int offsetX = 100;
-            int offsetY = 100;
+            int offsetY = 135;
 
+            gfx.DrawString(_seciliArac.Plaka, h3, KirmiziFirca, offsetX + 150, offsetY);
 
-            
-            grafik.DrawString("Araç Plakası : ", h3, Siyahfirca, offsetX, offsetY);
-            grafik.DrawString(_seciliArac.Plaka, h3, kirmizifirca, offsetX + 120, offsetY);
+            offsetY += 30;
 
+            gfx.DrawString(_seciliArac.Model.Ad, h3, KirmiziFirca, offsetX + 150, offsetY);
 
-            offsetY += 20;
+            offsetY += 30;
 
-            grafik.DrawString("Araç Modeli : ", h3, Siyahfirca, offsetX, offsetY);
-            grafik.DrawString(_seciliArac.Model.Ad, h3, kirmizifirca, offsetX + 120,offsetY);
+            gfx.DrawString((cmblistGelisSebebi.SelectedItem as IsEmriTuru).Ad, h3, KirmiziFirca, offsetX + 150, offsetY);
 
-            offsetY += 20;
+            offsetY += 30;
 
-            grafik.DrawString("Açıklama : ", h3, Siyahfirca, offsetX, offsetY);
-            grafik.DrawString(txtMusteriAciklamasi.Text, h3, kirmizifirca, offsetX + 120, offsetY);
+            gfx.DrawString(txtMusteriAciklamasi.Text, h3, KirmiziFirca, offsetX + 150, offsetY);
 
-            offsetY += 20;
+            gfx.DrawString(txtTeslimAlan.Text, h3, KirmiziFirca, offsetX - 20, offsetY + 210);
 
-            grafik.DrawString("Geliş Sebebi : ", h3, Siyahfirca, offsetX, offsetY);
-            grafik.DrawString((cmblistGelisSebebi.SelectedItem as IsEmriTuru).Ad, h3, kirmizifirca, offsetX + 120, offsetY);
-
-
-            offsetY += 50;
-
-            grafik.DrawString("Teslim Eden : ", h3, Siyahfirca, offsetX-20, offsetY);
-            grafik.DrawString(txtTeslimeden.Text, h3, kirmizifirca, offsetX - 20, offsetY+20);
-
-
-            grafik.DrawString("Teslim Alan : ", h3, Siyahfirca, offsetX+240, offsetY);
-            grafik.DrawString(txtTeslimAlan.Text, h3, kirmizifirca, offsetX + 240, offsetY+20);
-
-
-
-
-
-
-
-
+            gfx.DrawString(txtTeslimeden.Text, h3, KirmiziFirca, offsetX + 280, offsetY + 210);
 
             string dosyaAdi = Tools.TurkceKarakterTemizle(_seciliArac.Plaka) + "-" + Tools.RandomString(10) + ".pdf";
-            pdf.Save(Directory.GetCurrentDirectory() + "\\PDFs\\" + dosyaAdi);
-            Process.Start(Directory.GetCurrentDirectory() + "\\PDFs\\" + dosyaAdi);
 
-            pdf.Save(Directory.GetCurrentDirectory() + "\\Hello.pdf");
-
-        
-
+            pdf.Save(Directory.GetCurrentDirectory() + "\\PDFs\\" + dosyaAdi);//bin klasörü altında PDFs klasörü oluşturulacak ordan çekicek....
+            Process.Start(Directory.GetCurrentDirectory() + "\\PDFs\\" +dosyaAdi);
         }
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-       //PdfOlustur();
+            PdfOlustur();
         }
     }
 }

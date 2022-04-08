@@ -37,7 +37,7 @@ namespace AutoService
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-
+            BekleyenIsEmirleriniDoldur();
         }
 
         private void btMusteriListeleme_Click(object sender, EventArgs e)
@@ -88,6 +88,16 @@ namespace AutoService
         {
             DashboardForm anasayfa = new DashboardForm();
             anasayfa.ShowDialog();
+        }
+
+
+        private void BekleyenIsEmirleriniDoldur()
+        {
+            List<isEmri> liste = IsEmriControllers.Listele(0);
+            foreach (isEmri emir in liste)
+            {
+                pnlBekleyenIsEmirleri.Controls.Add(new IsEmriItem(emir));
+            }
         }
     }
 }

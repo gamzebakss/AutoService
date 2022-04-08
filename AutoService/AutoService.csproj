@@ -108,6 +108,12 @@
     <Compile Include="View\IsEmri\IsEmriAracKabulForm.Designer.cs">
       <DependentUpon>IsEmriAracKabulForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IsEmri\IsEmriItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\IsEmri\IsEmriItem.Designer.cs">
+      <DependentUpon>IsEmriItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Kullanici\KullaniciKayitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\IsEmri\IsEmriAracKabulForm.resx">
       <DependentUpon>IsEmriAracKabulForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\IsEmri\IsEmriItem.resx">
+      <DependentUpon>IsEmriItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Kullanici\KullaniciKayitForm.resx">
       <DependentUpon>KullaniciKayitForm.cs</DependentUpon>

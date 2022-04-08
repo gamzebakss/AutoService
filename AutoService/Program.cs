@@ -16,7 +16,7 @@ namespace AutoService
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IsEmriAracKabulForm());
+            Application.Run(new DashboardForm());
         }
     }
 }

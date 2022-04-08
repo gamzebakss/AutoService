@@ -38,9 +38,13 @@ namespace AutoService
             this.btnKullaniciProfil = new System.Windows.Forms.Button();
             this.btMusteriListeleme = new System.Windows.Forms.Button();
             this.btnMusteriKayit = new System.Windows.Forms.Button();
+            this.grpBekleyenislemler = new System.Windows.Forms.GroupBox();
+            this.pnlBekleyenIsEmirleri = new System.Windows.Forms.FlowLayoutPanel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.grpBekleyenislemler.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -175,6 +179,27 @@ namespace AutoService
             this.btnMusteriKayit.UseVisualStyleBackColor = false;
             this.btnMusteriKayit.Click += new System.EventHandler(this.btnMusteriKayit_Click);
             // 
+            // grpBekleyenislemler
+            // 
+            this.grpBekleyenislemler.BackColor = System.Drawing.Color.Transparent;
+            this.grpBekleyenislemler.Controls.Add(this.pnlBekleyenIsEmirleri);
+            this.grpBekleyenislemler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.grpBekleyenislemler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.grpBekleyenislemler.Location = new System.Drawing.Point(190, 77);
+            this.grpBekleyenislemler.Name = "grpBekleyenislemler";
+            this.grpBekleyenislemler.Size = new System.Drawing.Size(910, 189);
+            this.grpBekleyenislemler.TabIndex = 5;
+            this.grpBekleyenislemler.TabStop = false;
+            this.grpBekleyenislemler.Text = "İşlem Bekleyen Araçlar";
+            // 
+            // pnlBekleyenIsEmirleri
+            // 
+            this.pnlBekleyenIsEmirleri.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlBekleyenIsEmirleri.Location = new System.Drawing.Point(6, 21);
+            this.pnlBekleyenIsEmirleri.Name = "pnlBekleyenIsEmirleri";
+            this.pnlBekleyenIsEmirleri.Size = new System.Drawing.Size(898, 162);
+            this.pnlBekleyenIsEmirleri.TabIndex = 0;
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +207,7 @@ namespace AutoService
             this.BackgroundImage = global::AutoService.Properties.Resources.arkaplan2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1112, 764);
+            this.Controls.Add(this.grpBekleyenislemler);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblbasik);
             this.Controls.Add(this.pictureBox1);
@@ -194,6 +220,7 @@ namespace AutoService
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.grpBekleyenislemler.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +237,8 @@ namespace AutoService
         private System.Windows.Forms.Button btnisEmirleri;
         private System.Windows.Forms.Button btnKullaniciProfil;
         private System.Windows.Forms.Button btMusteriListeleme;
+        private System.Windows.Forms.GroupBox grpBekleyenislemler;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.FlowLayoutPanel pnlBekleyenIsEmirleri;
     }
 }
