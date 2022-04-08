@@ -143,7 +143,7 @@ namespace AutoService
             this.btnKullaniciProfil.TabIndex = 9;
             this.btnKullaniciProfil.Text = "Kullanıcı Profil";
             this.btnKullaniciProfil.UseVisualStyleBackColor = false;
-            this.btnKullaniciProfil.Click += new System.EventHandler(this.btnKullaniciProfil_Click);
+       
             // 
             // btMusteriListeleme
             // 

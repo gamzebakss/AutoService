@@ -31,5 +31,15 @@ namespace AutoService
         {
 
         }
+
+        private void pnlAcıklama_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlGelisSebebi_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

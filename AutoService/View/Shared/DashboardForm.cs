@@ -17,15 +17,7 @@ namespace AutoService
             InitializeComponent();
         }
 
-        private void servisİşlemTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kullanıcıKayıtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnMusteriKayit_Click(object sender, EventArgs e)
         {
@@ -47,10 +39,7 @@ namespace AutoService
             listele.Show();
         }
 
-        private void btnKullaniciProfil_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
 
         private void btnisEmirleri_Click(object sender, EventArgs e)
         {
@@ -59,30 +48,7 @@ namespace AutoService
             isemri.Show();
         }
 
-        private void btnAracKayit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAracProfil_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnislemTanimlama_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAracKabul_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnisEmirleriGiris_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -97,6 +63,7 @@ namespace AutoService
             foreach (isEmri emir in liste)
             {
                 pnlBekleyenIsEmirleri.Controls.Add(new IsEmriItem(emir));
+                ////
             }
         }
     }

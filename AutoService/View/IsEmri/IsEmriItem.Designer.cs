@@ -30,10 +30,10 @@ namespace AutoService
         private void InitializeComponent()
         {
             this.pnlPlaka = new System.Windows.Forms.Panel();
-            this.pnlAcıklama = new System.Windows.Forms.Panel();
-            this.pnlGelisSebebi = new System.Windows.Forms.Panel();
             this.lblPlaka = new System.Windows.Forms.Label();
+            this.pnlAcıklama = new System.Windows.Forms.Panel();
             this.lblAcıklama = new System.Windows.Forms.Label();
+            this.pnlGelisSebebi = new System.Windows.Forms.Panel();
             this.lblGelisSebebi = new System.Windows.Forms.Label();
             this.btnAc = new System.Windows.Forms.Button();
             this.pnlPlaka.SuspendLayout();
@@ -50,24 +50,6 @@ namespace AutoService
             this.pnlPlaka.Size = new System.Drawing.Size(125, 36);
             this.pnlPlaka.TabIndex = 0;
             // 
-            // pnlAcıklama
-            // 
-            this.pnlAcıklama.BackColor = System.Drawing.Color.Silver;
-            this.pnlAcıklama.Controls.Add(this.lblAcıklama);
-            this.pnlAcıklama.Location = new System.Drawing.Point(131, 2);
-            this.pnlAcıklama.Name = "pnlAcıklama";
-            this.pnlAcıklama.Size = new System.Drawing.Size(326, 36);
-            this.pnlAcıklama.TabIndex = 1;
-            // 
-            // pnlGelisSebebi
-            // 
-            this.pnlGelisSebebi.BackColor = System.Drawing.Color.Silver;
-            this.pnlGelisSebebi.Controls.Add(this.lblGelisSebebi);
-            this.pnlGelisSebebi.Location = new System.Drawing.Point(463, 2);
-            this.pnlGelisSebebi.Name = "pnlGelisSebebi";
-            this.pnlGelisSebebi.Size = new System.Drawing.Size(208, 36);
-            this.pnlGelisSebebi.TabIndex = 1;
-            // 
             // lblPlaka
             // 
             this.lblPlaka.AutoSize = true;
@@ -79,6 +61,16 @@ namespace AutoService
             this.lblPlaka.TabIndex = 0;
             this.lblPlaka.Text = "35MF79";
             // 
+            // pnlAcıklama
+            // 
+            this.pnlAcıklama.BackColor = System.Drawing.Color.Silver;
+            this.pnlAcıklama.Controls.Add(this.lblAcıklama);
+            this.pnlAcıklama.Location = new System.Drawing.Point(131, 2);
+            this.pnlAcıklama.Name = "pnlAcıklama";
+            this.pnlAcıklama.Size = new System.Drawing.Size(326, 36);
+            this.pnlAcıklama.TabIndex = 1;
+            this.pnlAcıklama.DoubleClick += new System.EventHandler(this.pnlAcıklama_DoubleClick);
+            // 
             // lblAcıklama
             // 
             this.lblAcıklama.AutoSize = true;
@@ -88,6 +80,16 @@ namespace AutoService
             this.lblAcıklama.Size = new System.Drawing.Size(255, 13);
             this.lblAcıklama.TabIndex = 1;
             this.lblAcıklama.Text = "Müsteri Şikayetleri buraya gelecek ama uzun gelebilir";
+            // 
+            // pnlGelisSebebi
+            // 
+            this.pnlGelisSebebi.BackColor = System.Drawing.Color.Silver;
+            this.pnlGelisSebebi.Controls.Add(this.lblGelisSebebi);
+            this.pnlGelisSebebi.Location = new System.Drawing.Point(463, 2);
+            this.pnlGelisSebebi.Name = "pnlGelisSebebi";
+            this.pnlGelisSebebi.Size = new System.Drawing.Size(208, 36);
+            this.pnlGelisSebebi.TabIndex = 1;
+            this.pnlGelisSebebi.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGelisSebebi_Paint);
             // 
             // lblGelisSebebi
             // 

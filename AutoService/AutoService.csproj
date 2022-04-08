@@ -78,6 +78,7 @@
     <Compile Include="Controllers\FotoControllers.cs" />
     <Compile Include="Controllers\IsEmriControllers.cs" />
     <Compile Include="Controllers\IsEmriTuruControllers.cs" />
+    <Compile Include="Controllers\IslemControllers.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\Tools.cs" />
     <Compile Include="Model\Arac.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Model\Fotograf.cs" />
     <Compile Include="Model\isEmri.cs" />
     <Compile Include="Model\IsEmriTuru.cs" />
+    <Compile Include="Model\Islem.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="View\Arac\AracEkle.cs">
       <SubType>Form</SubType>
@@ -113,6 +115,12 @@
     </Compile>
     <Compile Include="View\IsEmri\IsEmriItem.Designer.cs">
       <DependentUpon>IsEmriItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\IsEmri\IslemEkleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\IsEmri\IslemEkleForm.Designer.cs">
+      <DependentUpon>IslemEkleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Kullanici\KullaniciKayitForm.cs">
       <SubType>Form</SubType>
